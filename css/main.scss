@@ -1,0 +1,65 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.frameContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+}
+
+.frame{
+    width: 70%;
+    height: 70%;
+    background-color: red;
+    box-shadow: 5px 5px 0 darkred;
+    border-radius: 40px;
+    //flex: 1;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridContainer{
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    background-color: #2a7fff;
+    display: flex;
+    flex-direction: column;
+    .row{
+        //height will be added via js file ... document.getElementById('mygraph').style.height = my_height + "px";
+        display: flex;
+        background-color: purple;
+        .cell{
+            flex: 1;
+            background-color: lightcyan;
+            border: 1px solid black;
+            z-index: 100;
+            &:hover{
+                background-color: blue;
+            }
+        }
+    }
+}
+
+button{
+    width: 180px;
+    height: 40px;
+    background-color: #2a7fff;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    margin-top: 15px;
+    border-radius: 10px;
+    &:active{
+        scale: .97;
+    }
+}
