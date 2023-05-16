@@ -38,13 +38,17 @@ html, body{
         //height will be added via js file ... document.getElementById('mygraph').style.height = my_height + "px";
         display: flex;
         background-color: purple;
+        &:last-child{
+            border-bottom: 1px solid black;
+        }
         .cell{
             flex: 1;
             background-color: lightcyan;
-            border: 1px solid black;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
             z-index: 100;
-            &:hover{
-                background-color: blue;
+            &:last-child{
+                border-right: 1px solid black;
             }
         }
     }

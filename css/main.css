@@ -38,14 +38,18 @@ html, body {
   display: flex;
   background-color: purple;
 }
+.gridContainer .row:last-child {
+  border-bottom: 1px solid black;
+}
 .gridContainer .row .cell {
   flex: 1;
   background-color: lightcyan;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
   z-index: 100;
 }
-.gridContainer .row .cell:hover {
-  background-color: blue;
+.gridContainer .row .cell:last-child {
+  border-right: 1px solid black;
 }
 
 button {
