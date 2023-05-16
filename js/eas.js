@@ -17,4 +17,9 @@ function createGrid(){
         }
         document.querySelector('.gridContainer').appendChild(row);
     }
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.addEventListener('click', function(e){
+            e.target.style.background = 'black';
+        });
+    });
 }

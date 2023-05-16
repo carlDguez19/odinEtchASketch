@@ -37,13 +37,13 @@ html, body{
     .row{
         //height will be added via js file ... document.getElementById('mygraph').style.height = my_height + "px";
         display: flex;
-        background-color: purple;
+        //background-color: purple;
         &:last-child{
             border-bottom: 1px solid black;
         }
         .cell{
             flex: 1;
-            background-color: lightcyan;
+            background-color: lime;
             border-top: 1px solid black;
             border-left: 1px solid black;
             z-index: 100;
@@ -67,3 +67,8 @@ button{
         scale: .97;
     }
 }
+
+.black{
+    background-color: black;
+}
+

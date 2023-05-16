@@ -36,14 +36,13 @@ html, body {
 }
 .gridContainer .row {
   display: flex;
-  background-color: purple;
 }
 .gridContainer .row:last-child {
   border-bottom: 1px solid black;
 }
 .gridContainer .row .cell {
   flex: 1;
-  background-color: lightcyan;
+  background-color: lime;
   border-top: 1px solid black;
   border-left: 1px solid black;
   z-index: 100;
@@ -64,4 +63,8 @@ button {
 }
 button:active {
   scale: 0.97;
+}
+
+.black {
+  background-color: black;
 }/*# sourceMappingURL=main.css.map */
