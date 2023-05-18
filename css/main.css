@@ -42,7 +42,6 @@ html, body {
 }
 .gridContainer .row .cell {
   flex: 1;
-  background-color: lime;
   border-top: 1px solid black;
   border-left: 1px solid black;
   z-index: 100;

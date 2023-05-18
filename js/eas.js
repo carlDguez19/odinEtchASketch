@@ -1,28 +1,62 @@
-const button = document.querySelector('.buttonA');
+const cgButton = document.querySelector('.cgButton');
+const paintBlackButton = document.querySelector('.paintBlack');
+let cellsNL = null;
 
-button.addEventListener('click', createGrid);
+cgButton.addEventListener('click', createGrid);
+paintBlackButton.addEventListener('click', paintBlack);
+
+function paintBlack(){
+    const cellsArray = Array.from(cellsNL);
+    console.log(cellsNL);
+    cellsNL.forEach(addingEL);
+}
+
+function addingEL(item){
+    item.addEventListener('click', turnBlack);
+}
+
+let turnBlack = (e) => {
+    console.log("poppop");
+}
 
 function createGrid(){
-    let rowHeight = 25/5;
-    for(let i = 0; i < 5; i++){
-        console.log("here");
+    let rowHeight = 25/2;
+    for(let i = 0; i < 2; i++){
+        //console.log("here");
         const row = document.createElement('div');
         row.style.height = rowHeight + 'em';
         row.classList.add('row');
-        for(let j = 0; j < 5; j++){
-            console.log(j);
+        for(let j = 0; j < 2; j++){
+            //console.log(j);
             const cell = document.createElement('div');
             cell.classList.add('cell');
             row.appendChild(cell);
         }
         document.querySelector('.gridContainer').appendChild(row);
     }
+    cellsNL = document.querySelectorAll('.cell');
     //add function here that calls the code snippet at the bottom to listen for clicks on the grid
 }
 
 //place this within a function that is called uptop after the createGrid function
-document.querySelectorAll('.cell').forEach(cell => {
-    cell.addEventListener('click', function(e){
-        e.target.style.backgroundColor = 'black';
-    });
-});
+// document.querySelectorAll('.cell').forEach(cell => {
+//     cell.addEventListener('click', function(e){
+//         e.target.style.backgroundColor = 'black';
+//     });
+// });
+
+// const gridContain = document.getElementById('gridContainer');
+
+// gridContain.addEventListener('click', (e) => {
+//     if(e.target.classList.contains('cell')){
+//         console.log('popcoreRock');
+//     }
+// });
+
+// cells.forEach((cell) => {
+//     console.log('popcorn2');
+//     cell.addEventListener('click', () => {
+//         console.log("popcorn");
+//         this.style.backgroundColor = 'black';
+//     });
+// });
