@@ -7,17 +7,22 @@ paintBlackButton.addEventListener('click', paintBlack);
 
 function paintBlack(){
     const cellsArray = Array.from(cellsNL);
-    console.log(cellsNL);
-    cellsNL.forEach(addingEL);
+    for(let i = 0; i < cellsArray.length; i++){
+        console.log(cellsArray[i] + i);
+        cellsArray[i].addEventListener('click', hello);
+    }
 }
 
-function addingEL(item){
-    item.addEventListener('click', turnBlack);
+function hello(){
+    console.log('hello buddy');
 }
 
-let turnBlack = (e) => {
-    console.log("poppop");
-}
+// function addingEL(item){
+//     console.log(item);
+//     item.addEventListener('click', () => {
+
+//     });
+// }
 
 function createGrid(){
     let rowHeight = 25/2;
