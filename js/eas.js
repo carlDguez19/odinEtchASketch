@@ -1,17 +1,22 @@
-const cgButton = document.querySelector('.cgButton');
-const paintBlackButton = document.querySelector('.paintBlack');
+//const cgButton = document.querySelector('.cgButton');//we will get rid of this button and automatically render in the grid
+//const paintBlackButton = document.querySelector('.paintBlack');
+//paintBlackButton.addEventListener('click', paintBlack);
 let cellsNL = null;
-
-cgButton.addEventListener('click', createGrid);
-paintBlackButton.addEventListener('click', paintBlack);
-
-function paintBlack(){
-    const cellsArray = Array.from(cellsNL);
-    for(let i = 0; i < cellsArray.length; i++){
-        console.log(cellsArray[i] + i);
-        cellsArray[i].addEventListener('click', hello);
-    }
+let size = 2;
+createGrid(size);
+//cgButton.addEventListener('click', createGrid);
+const cellsArray = Array.from(cellsNL);
+for(let i = 0; i < cellsArray.length; i++){
+    console.log(cellsArray[i] + i);
+    cellsArray[i].addEventListener('mouseover', hello);
 }
+// function paintBlack(){
+//     const cellsArray = Array.from(cellsNL);
+//     for(let i = 0; i < cellsArray.length; i++){
+//         console.log(cellsArray[i] + i);
+//         cellsArray[i].addEventListener('click', hello);
+//     }
+// }
 
 function hello(){
     console.log('hello buddy');
@@ -24,15 +29,13 @@ function hello(){
 //     });
 // }
 
-function createGrid(){
-    let rowHeight = 25/2;
-    for(let i = 0; i < 2; i++){
-        //console.log("here");
+function createGrid(size){
+    let rowHeight = 25/size;
+    for(let i = 0; i < size; i++){
         const row = document.createElement('div');
         row.style.height = rowHeight + 'em';
         row.classList.add('row');
-        for(let j = 0; j < 2; j++){
-            //console.log(j);
+        for(let j = 0; j < size; j++){
             const cell = document.createElement('div');
             cell.classList.add('cell');
             row.appendChild(cell);
