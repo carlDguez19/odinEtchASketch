@@ -6,10 +6,9 @@ let size = 2;
 createGrid(size);
 //cgButton.addEventListener('click', createGrid);
 const cellsArray = Array.from(cellsNL);
-for(let i = 0; i < cellsArray.length; i++){
-    console.log(cellsArray[i] + i);
-    cellsArray[i].addEventListener('mouseover', hello);
-}
+cellsArray.forEach((cell) => {
+    console.log(typeof cell);
+});
 // function paintBlack(){
 //     const cellsArray = Array.from(cellsNL);
 //     for(let i = 0; i < cellsArray.length; i++){
