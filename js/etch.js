@@ -2,14 +2,20 @@ const gridContain = document.querySelector('.gridContainer');
 let size = 5;
 let nlCells = createGrid(size);
 
-nlCells.forEach((cell)=>{
-    cell.addEventListener('click', () => {
-        this.classList.add('black');
-    });
-});
+for(let i = 0; i < nlCells.length; i++){
+    nlCells[i].addEventListener('mouseover', black);
+}
+
+//console.log(getEventListeners(document.querySelector('.cell')));
+
+// nlCells.forEach((cell)=>{
+//     cell.addEventListener('click', () => {
+//         this.classList.add('black');
+//     });
+// });
 
 function black(e){
-    this.classList.add('black');
+    e.target.sytle.backgroundColor = 'blue';
 }
 
 function createGrid(size){
