@@ -1,8 +1,12 @@
+@font-face {
+  font-family: easMain;
+  src: url("/font/zai_PencilTypewriter.ttf");
+}
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "easMain", sans-serif;
 }
 
 .frameContainer {
@@ -34,19 +38,13 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-.gridContainer .row {
-  display: flex;
-}
-.gridContainer .row:last-child {
-  border-bottom: 1px solid black;
-}
-.gridContainer .row .cell {
+.gridContainer .cell {
   flex: 1;
   border-top: 1px solid black;
   border-left: 1px solid black;
   z-index: 100;
 }
-.gridContainer .row .cell:last-child {
+.gridContainer .cell:last-child {
   border-right: 1px solid black;
 }
 

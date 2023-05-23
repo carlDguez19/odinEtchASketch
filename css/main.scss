@@ -1,8 +1,13 @@
+@font-face {
+    font-family: easMain;
+    src: url("/font/zai_PencilTypewriter.ttf");
+}
+
 html, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "easMain", sans-serif;
 }
 
 .frameContainer{
@@ -34,21 +39,14 @@ html, body{
     background-color: #2a7fff;
     display: flex;
     flex-direction: column;
-    .row{
-        //height will be added via js file ... document.getElementById('mygraph').style.height = my_height + "px";
-        display: flex;
+    .cell{
+        flex: 1;
+        //background-color: lime;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        z-index: 100;
         &:last-child{
-            border-bottom: 1px solid black;
-        }
-        .cell{
-            flex: 1;
-            //background-color: lime;
-            border-top: 1px solid black;
-            border-left: 1px solid black;
-            z-index: 100;
-            &:last-child{
-                border-right: 1px solid black;
-            }
+            border-right: 1px solid black;
         }
     }
 }
