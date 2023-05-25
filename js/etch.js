@@ -39,5 +39,3 @@ function clearGrid(grid){
         cell.remove();
     })
 }
-
-console.log("hello");
