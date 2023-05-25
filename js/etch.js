@@ -21,16 +21,27 @@ function genGrid(size){
     //clear grid of any previous size grid
     clearGrid(gc);
 
+    //set template for grid
     gc.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gc.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
     let totalCells = size * size;
 
+    //fill grid with divs
     for(let i = 0; i < totalCells; i++){
         let cell = document.createElement('div');
         cell.style.backgroundColor = "lime";
+        //cell.style.borderRadius = "3px";
         gc.appendChild(cell);
     }
+
+    //paint each cell using event delegation use one event listener instead of one for every cell
+    gc.addEventListener('mouseover', (e) => {
+        if(e.target.tagName === 'DIV'){
+            e.target.style.backgroundColor = "black";
+        }
+    });
+
 }
 
 function clearGrid(grid){

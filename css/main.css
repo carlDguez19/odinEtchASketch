@@ -30,7 +30,7 @@ h1 {
 .gridContainer {
   width: 500px;
   height: 500px;
-  background-color: #2a7fff;
+  background-color: red;
   display: grid;
   gap: 1px;
 }
