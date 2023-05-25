@@ -4,6 +4,10 @@ let size = 20;
 genGrid(15);
 sizeLis();
 
+//randomBtnClick
+let rdmBtn = document.querySelector('.random');
+rdmBtn.addEventListener('click', paintRandom);
+
 
 function sizeLis(){
     let inpt = document.querySelector(".input");
@@ -36,12 +40,28 @@ function genGrid(size){
     }
 
     //paint each cell using event delegation use one event listener instead of one for every cell
+    paintBlackDefault();
+}
+
+function paintBlackDefault(){
+    let gc = document.querySelector('.gridContainer');
     gc.addEventListener('mouseover', (e) => {
         if(e.target.tagName === 'DIV'){
             e.target.style.backgroundColor = "black";
         }
     });
+}
 
+function paintRandom(){
+    let gc = document.querySelector('.gridContainer');
+    gc.addEventListener('mouseover', (e) => {
+        if(e.target.tagName === 'DIV'){
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+    });
 }
 
 function clearGrid(grid){
