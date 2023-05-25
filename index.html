@@ -11,12 +11,16 @@
     <script src="js/etch.js" defer></script>
 </head>
 <body>
-    <h1>Etch-a-Sketch</h1>
-    <div class="frameContainer">
-        <div class="frame">
-            <div class="gridContainer" id="gridContainer">
-            </div><!--end gridContainer-->
-        </div><!--end frame-->
+    <!-- <h1>Etch-a-Sketch</h1> -->
+    <div class="mainArea">
+        <div class="footer">
+            <label for="gridSize" class="sizelbl">size: </label>
+            <!-- <input type="text" class="sizeOf" id="gridSize"> -->
+            <input type="range" class="input" min="10" max="100" step="10" value="20">
+            <!-- <button class="selectSize" id="gridSize">Confirm</button> -->
+        </div>
+        <div class="frame"></div>
+        <div class="gridContainer" id="gridContainer"></div><!--end gridContainer-->
     </div><!--end frameContainer-->
 </body>
 </html>

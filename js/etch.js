@@ -1,37 +1,45 @@
-const gridContain = document.querySelector('.gridContainer');
-let size = 5;
-let nlCells = createGrid(size);
+//gc.style.border = "3px solid black";
+let size = 20;
 
-for(let i = 0; i < nlCells.length; i++){
-    nlCells[i].addEventListener('mouseover', black);
-}
+genGrid(15);
 
-//console.log(getEventListeners(document.querySelector('.cell')));
+let inpt = document.querySelector(".input");
+inpt.addEventListener('change', function(){
 
-// nlCells.forEach((cell)=>{
-//     cell.addEventListener('click', () => {
-//         this.classList.add('black');
-//     });
-// });
+    let blah = inpt.value;
+    genGrid(blah);
+})
+console.log("hello");
 
-function black(e){
-    e.target.sytle.backgroundColor = 'blue';
-}
 
-function createGrid(size){
-    let hnw = 25/size;
-    for(let i = 0; i < size; i++){
-        let row = document.createElement('div');
-        row.classList.add('row');
-        for(let j = 0; j < size; j++){
-            let cell = document.createElement('div');
-            cell.style.width = hnw + 'em';
-            cell.style.height = hnw + 'em';
-            cell.classList.add('cell');
-            //cell.classList.add('black');
-            row.appendChild(cell);
-        }
-        gridContain.appendChild(row);
+
+
+function genGrid(size){
+    let gc = document.querySelector(".gridContainer");
+
+    //clear grid of any previous size grid
+    let cells = gc.querySelectorAll('div');
+    cells.forEach((cell) => {
+        cell.remove();
+    })
+
+    gc.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    gc.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    let totalCells = size * size;
+
+    for(let i = 0; i < totalCells; i++){
+        let cell = document.createElement('div');
+        cell.style.backgroundColor = "lime";
+        gc.appendChild(cell);
     }
-    return document.querySelectorAll('.cell');
-}//end createGrid
+}
+
+function getSize(){
+    //let input = prompt("enter size of board: ");
+    let input = document.querySelector(".input");
+    size = input.value();
+    return input;
+}
+
+console.log("hello");

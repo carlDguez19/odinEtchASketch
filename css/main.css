@@ -2,16 +2,12 @@
   font-family: easMain;
   src: url("/font/zai_PencilTypewriter.ttf");
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+h1 {
   font-family: "easMain", sans-serif;
 }
 
-.frameContainer {
+.mainArea {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: auto;
@@ -19,8 +15,9 @@ html, body {
 }
 
 .frame {
-  width: 70%;
-  height: 70%;
+  position: absolute;
+  width: 700px;
+  height: 550px;
   background-color: red;
   box-shadow: 5px 5px 0 darkred;
   border-radius: 40px;
@@ -31,21 +28,22 @@ html, body {
 }
 
 .gridContainer {
-  position: absolute;
-  width: 25em;
-  height: 25em;
+  width: 500px;
+  height: 500px;
   background-color: #2a7fff;
+  display: grid;
+  gap: 1px;
+}
+
+.footer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.gridContainer .cell {
-  flex: 1;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  z-index: 100;
-}
-.gridContainer .cell:last-child {
-  border-right: 1px solid black;
+
+input {
+  width: 100px;
 }
 
 button {
@@ -60,8 +58,4 @@ button {
 }
 button:active {
   scale: 0.97;
-}
-
-.black {
-  background-color: purple;
 }/*# sourceMappingURL=main.css.map */
