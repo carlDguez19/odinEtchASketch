@@ -4,6 +4,8 @@
 }
 h1{
     font-family: 'easMain', sans-serif;
+    position: absolute;
+    top: 3px;
 }
 // html, body{
 //     margin: 0;
@@ -41,7 +43,6 @@ h1{
     height: 500px;
     background-color: red;
     display: grid;
-    gap: 1px;
     // .cell{
     //     //flex: 1;
     //     background-color: lime;
@@ -49,6 +50,9 @@ h1{
     //     //border-left: 1px solid black;
     //     //z-index: 100;
     // }
+}
+.gridToggle{
+    gap: 1px;
 }
 
 .footer{
@@ -58,6 +62,10 @@ h1{
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+}
+
+label{
+    font-family: 'easMain', sans-serif;
 }
 
 input{

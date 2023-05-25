@@ -6,7 +6,19 @@ sizeLis();
 randomLis();
 blackLis();
 clearLis();
+eraseLis();
+gridLis();
 //randomBtnClick
+
+function gridLis(){
+    let grdBtn = document.querySelector('.grid');
+    grdBtn.addEventListener('click', gridToggle);
+}
+
+function eraseLis(){
+    let ersBtn = document.querySelector('.erase');
+    ersBtn.addEventListener('click', eraserActive);
+}
 
 function clearLis(){
     let clrBtn = document.querySelector('.clear');
@@ -48,7 +60,7 @@ function genGrid(size){
     //fill grid with divs
     for(let i = 0; i < totalCells; i++){
         let cell = document.createElement('div');
-        cell.style.backgroundColor = "lime";
+        cell.style.backgroundColor = "white";
         //cell.style.borderRadius = "3px";
         gc.appendChild(cell);
     }
@@ -78,6 +90,15 @@ function paintRandom(){
     });
 }
 
+function eraserActive(){
+    let gc = document.querySelector('.gridContainer');
+    gc.addEventListener('mouseover', (e) => {
+        if(e.target.tagName === 'DIV'){
+            e.target.style.backgroundColor = "white";
+        }
+    });
+}
+
 function clearDrawPad(){
     let gc = document.querySelector('.gridContainer');
     clearGrid(gc);
@@ -89,4 +110,9 @@ function clearGrid(grid){
     cells.forEach((cell) => {
         cell.remove();
     })
+}
+
+function gridToggle(){
+    let gc = document.querySelector('.gridContainer');
+    gc.classList.toggle('gridToggle');
 }
