@@ -1,13 +1,27 @@
 //gc.style.border = "3px solid black";
 let size = 20;
 
-genGrid(15);
+genGrid(20);
 sizeLis();
-
+randomLis();
+blackLis();
+clearLis();
 //randomBtnClick
-let rdmBtn = document.querySelector('.random');
-rdmBtn.addEventListener('click', paintRandom);
 
+function clearLis(){
+    let clrBtn = document.querySelector('.clear');
+    clrBtn.addEventListener('click', clearDrawPad);
+}
+
+function blackLis(){
+    let blkBtn = document.querySelector('.black');
+    blkBtn.addEventListener('click', paintBlackDefault);
+}
+
+function randomLis(){
+    let rdmBtn = document.querySelector('.random');
+    rdmBtn.addEventListener('click', paintRandom);
+}
 
 function sizeLis(){
     let inpt = document.querySelector(".input");
@@ -62,6 +76,12 @@ function paintRandom(){
             e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         }
     });
+}
+
+function clearDrawPad(){
+    let gc = document.querySelector('.gridContainer');
+    clearGrid(gc);
+    genGrid(size);
 }
 
 function clearGrid(grid){
