@@ -47,11 +47,11 @@ ODINETCHASKETCH/
 
 ### Grid Generation
 - The grid is created dynamically using CSS Grid.
-- \`genGrid(size)\` clears any existing cells, sets the grid template, and generates \`size × size\` divs.
+- `genGrid(size)` clears any existing cells, sets the grid template, and generates `size × size` divs.
 - Each cell begins with a white background.
 
 ### Event Delegation
-Instead of attaching listeners to every cell, the app uses a **single \`mouseover\` listener** on the grid container.  
+Instead of attaching listeners to every cell, the app uses a **single `mouseover` listener** on the grid container.  
 This improves performance and keeps the code maintainable.
 
 ### Drawing Modes
@@ -64,7 +64,7 @@ This improves performance and keeps the code maintainable.
 - A slider input updates the label and regenerates the grid with the new dimensions.
 
 ### Grid Toggle
-- A CSS class (\`.gridToggle\`) is applied/removed to show or hide grid lines.
+- A CSS class (`.gridToggle`) is applied/removed to show or hide grid lines.
 
 ---
 
@@ -97,9 +97,9 @@ This improves performance and keeps the code maintainable.
 
 Add your Netlify link here once deployed:
 
-\`\`\`
+```
 https://your-etch-a-sketch.netlify.app
-\`\`\`
+```
 
 ---
 
