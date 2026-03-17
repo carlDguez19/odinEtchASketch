@@ -1,6 +1,11 @@
-//gc.style.border = "3px solid black";
+// ===============================
+// Etch‑A‑Sketch State & Initialization
+// ===============================
+
+// Default grid size
 let size = 20;
 
+// Generate initial grid and attach all UI listeners
 genGrid(20);
 sizeLis();
 randomLis();
@@ -8,33 +13,42 @@ blackLis();
 clearLis();
 eraseLis();
 gridLis();
-//randomBtnClick
 
+// ===============================
+// UI Button Listeners
+// ===============================
+
+// Toggle grid lines on/off
 function gridLis(){
     let grdBtn = document.querySelector('.grid');
     grdBtn.addEventListener('click', gridToggle);
 }
 
+// Activate eraser mode
 function eraseLis(){
     let ersBtn = document.querySelector('.erase');
     ersBtn.addEventListener('click', eraserActive);
 }
 
+// Clear the entire drawing pad
 function clearLis(){
     let clrBtn = document.querySelector('.clear');
     clrBtn.addEventListener('click', clearDrawPad);
 }
 
+// Switch to black drawing mode
 function blackLis(){
     let blkBtn = document.querySelector('.black');
     blkBtn.addEventListener('click', paintBlackDefault);
 }
 
+// Switch to random‑color drawing mode
 function randomLis(){
     let rdmBtn = document.querySelector('.random');
     rdmBtn.addEventListener('click', paintRandom);
 }
 
+// Handle grid size slider input
 function sizeLis(){
     let inpt = document.querySelector(".input");
     let lbl = document.querySelector(".sizelbl");
@@ -45,30 +59,48 @@ function sizeLis(){
     })
 }
 
+
+// ===============================
+// Grid Generation & Management
+// ===============================
+
+// Create a new grid of the given size
 function genGrid(size){
     let gc = document.querySelector(".gridContainer");
 
-    //clear grid of any previous size grid
+    // Remove any existing cells
     clearGrid(gc);
 
-    //set template for grid
+     // Define CSS grid structure
     gc.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gc.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
     let totalCells = size * size;
 
-    //fill grid with divs
+    // Create individual cells
     for(let i = 0; i < totalCells; i++){
         let cell = document.createElement('div');
         cell.style.backgroundColor = "white";
-        //cell.style.borderRadius = "3px";
         gc.appendChild(cell);
     }
 
-    //paint each cell using event delegation use one event listener instead of one for every cell
+    // Default drawing mode is black
     paintBlackDefault();
 }
 
+// Remove all cells from the grid container
+function clearGrid(grid){
+    let cells = grid.querySelectorAll('div');
+    cells.forEach((cell) => {
+        cell.remove();
+    })
+}
+
+// ===============================
+// Drawing Modes
+// ===============================
+
+// Draw in black on hover
 function paintBlackDefault(){
     let gc = document.querySelector('.gridContainer');
     gc.addEventListener('mouseover', (e) => {
@@ -78,6 +110,7 @@ function paintBlackDefault(){
     });
 }
 
+// Draw random colors on hover
 function paintRandom(){
     let gc = document.querySelector('.gridContainer');
     gc.addEventListener('mouseover', (e) => {
@@ -90,6 +123,7 @@ function paintRandom(){
     });
 }
 
+// Erase (paint white) on hover
 function eraserActive(){
     let gc = document.querySelector('.gridContainer');
     gc.addEventListener('mouseover', (e) => {
@@ -99,19 +133,18 @@ function eraserActive(){
     });
 }
 
+// ===============================
+// Utility Actions
+// ===============================
+
+// Clear the board and regenerate the grid
 function clearDrawPad(){
     let gc = document.querySelector('.gridContainer');
     clearGrid(gc);
     genGrid(size);
 }
 
-function clearGrid(grid){
-    let cells = grid.querySelectorAll('div');
-    cells.forEach((cell) => {
-        cell.remove();
-    })
-}
-
+// Toggle grid line visibility via CSS class
 function gridToggle(){
     let gc = document.querySelector('.gridContainer');
     gc.classList.toggle('gridToggle');
