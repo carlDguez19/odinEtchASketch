@@ -25,7 +25,7 @@ A dynamic drawing application built with vanilla JavaScript, demonstrating DOM m
 
 ## Project Structure
 
-\`\`\`
+```
 ODINETCHASKETCH/
 │
 ├── index.html
@@ -39,7 +39,7 @@ ODINETCHASKETCH/
 │   └── etch.js
 │
 └── font/
-\`\`\`
+```
 
 ---
 
